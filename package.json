@@ -1,0 +1,61 @@
+{
+  "name": "warrantyvault",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline Windows purchase and warranty tracker with coverage deadlines and claim records. Arabic and English.",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "tsx server/main.ts",
+    "build": "tsc --noEmit && vite build && node scripts/build-server.mjs",
+    "start": "node dist-server/main.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "desktop": "electron dist-electron/main.cjs",
+    "package:windows": "node scripts/package-windows.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:native": "node scripts/native-smoke.mjs",
+    "desktop:install": "node node_modules/electron/install.js",
+    "predesktop": "npm run desktop:install",
+    "prepackage:windows": "npm run desktop:install"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.8",
+    "@fontsource-variable/noto-sans-arabic": "^5.2.8",
+    "@phosphor-icons/react": "^2.1.10",
+    "express": "^5.1.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "latest",
+    "@playwright/test": "latest",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "latest",
+    "electron": "44.7.0",
+    "esbuild": "latest",
+    "prettier": "3.9.10",
+    "rcedit": "5.0.2",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "8.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ahmed-Khalil-Mohamed/warrantyvault.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ahmed-Khalil-Mohamed/warrantyvault/issues"
+  },
+  "homepage": "https://github.com/Ahmed-Khalil-Mohamed/warrantyvault#readme",
+  "license": "MIT"
+}

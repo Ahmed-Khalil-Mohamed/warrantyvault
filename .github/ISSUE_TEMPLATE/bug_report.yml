@@ -1,0 +1,44 @@
+name: "Bug report / بلاغ عن مشكلة"
+description: "Report a reproducible problem in WarrantyVault."
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Arabic and English are welcome. Use fictional data and redact personal information. Security vulnerabilities belong in private reporting, not public issues."
+  - type: input
+    id: version
+    attributes:
+      label: "Version / الإصدار"
+      placeholder: "1.1.0, or the commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Environment / بيئة التشغيل"
+      description: "Operating system, Windows desktop or browser preview, interface language and theme."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce / خطوات تكرار المشكلة"
+      description: "Which WarrantyVault action did you use? Include the smallest fictional example that reproduces the issue."
+      placeholder: |
+        1. Open...
+        2. Enter...
+        3. Select...
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: "Expected and actual result / المتوقع وما حدث"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Screenshots or sanitized logs / صور أو سجل بعد إزالة البيانات الخاصة"
+      description: "Do not upload your database or private records."

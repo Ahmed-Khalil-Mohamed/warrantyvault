@@ -1,0 +1,9 @@
+node_modules
+data
+release
+dist
+dist-server
+dist-electron
+.git
+test-results
+playwright-report
